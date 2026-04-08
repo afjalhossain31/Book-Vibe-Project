@@ -1,11 +1,10 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 import {
   addReadListToLocalDB,
   getAllReadListFromLocalDB,
 } from "../utils/localDB";
-
-export const BookContext = createContext();
+import { BookContext } from "./context";
 
 const BookProvider = ({ children }) => {
   const [readList, setReadList] = useState(() => getAllReadListFromLocalDB());
